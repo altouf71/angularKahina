@@ -1,2 +1,30 @@
+<div class="container-fluid p-0 d-flex flex-column min-vh-100">
+    <app-h-menu (cart)="showCart = !showCart" (menu)="showMenu = !showMenu"
+        (profile)="showLogin = !showLogin"></app-h-menu>
 
-<app-h-menu></app-h-menu>
+    <!--<app-v-menu></app-v-menu>-->
+    @if (showMenu) {
+    <aside class="side-menu" [animate.enter]="'slide-in-left'" [animate.leave]="'slide-out-left'">
+        <app-v-menu></app-v-menu>
+    </aside>
+    }
+
+    @if (showCart) {
+    <aside class="shopping-cart" [animate.enter]="'slide-in-right'" [animate.leave]="'slide-out-right'">
+        <div #sCart>
+            <app-s-cart></app-s-cart>
+        </div>
+    </aside>
+    }
+
+    @if (showLogin) {
+    <aside class="profil-login" [animate.enter]="'slide-in-right'" [animate.leave]="'slide-out-right'">
+        <div #sCart>
+            <app-p-login></app-p-login>
+        </div>
+    </aside>
+    }
+
+
+<app-footer></app-footer>
+</div>

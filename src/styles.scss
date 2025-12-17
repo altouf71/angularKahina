@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'bootstrap/scss/bootstrap';
+//@use "bootstrap/scss/functions";
+//@use "bootstrap/scss/variables";
+//@use "bootstrap/scss/mixins";
 
-//@import "assets/styles/variables";
-//@import "assets/styles/layout";
-//@import "assets/styles/forms";
+/* overrides */
+$primary: #0d6efd;
+
+@import "bootstrap/scss/bootstrap";
