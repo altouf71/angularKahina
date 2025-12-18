@@ -1,6 +1,8 @@
 <div class="container-fluid p-0 d-flex flex-column min-vh-100">
-    <app-h-menu (cart)="showCart = !showCart" (menu)="showMenu = !showMenu"
-        (profile)="showLogin = !showLogin"></app-h-menu>
+        <app-h-menu (cart)="showCart = !showCart; showMenu = false; showLogin = false"
+            (menu)="showMenu = !showMenu; showCart = false ; showLogin = false"
+            (profile)="showLogin = !showLogin; showCart = false; showMenu = false">
+        </app-h-menu>
 
     <!--<app-v-menu></app-v-menu>-->
     @if (showMenu) {
