@@ -42,4 +42,7 @@ export class HMenu {
       message: 'Hello from HMenu Heart',
     });
   }
+  goToHome() {
+    window.location.href = '/acceuil';
+  }
 }

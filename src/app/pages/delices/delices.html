@@ -1,0 +1,77 @@
+
+<div class="social-bar">
+  <span class="label">NOUS SUIVRE SUR :</span>
+
+  <a *ngFor="let s of socials"
+     [href]="s.url"
+     target="_blank"
+     class="social-link">
+    <img [src]="s.icon" [alt]="s.name" width="25" title="image"/>
+  </a>
+</div>
+<div class="hero-container">
+
+  <div class="hero-title">
+    <p class="title">LES DÉLICES DE KAHINA</p>
+    <p class="subtitle">DÉCOUVRIR NOS SUCRERIES</p>
+  </div>
+
+  <div class="hero-products">
+    <div *ngFor="let box of heroBoxes"
+         class="hero-box"
+         (mouseenter)="box.showInfo = true"
+         (mouseleave)="box.showInfo = false">
+
+      <img class="info-icon" src="/assets/icons/info.png" title="image"/>
+
+      <p class="info" *ngIf="box.showInfo">
+        {{ box.description }}
+      </p>
+
+      <img [src]="box.image" class="box-image" title="image"/>
+
+      <p class="box-title">{{ box.name }}</p>
+
+      <div class="price">
+        {{ box.price }} <span>$CA</span>
+      </div>
+
+      <button (click)="addToCart(box)">
+        Ajouter au Panier
+        <img src="/assets/images/shopping_cart_bleu.png" title="image"/>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="products-grid">
+
+  <div *ngFor="let p of products" class="product-card">
+
+    <div class="video-thumb" (click)="playVideo(p.video)">
+      <img [src]="p.image" title="image"/>
+    </div>
+
+    <p class="name">{{ p.name }}</p>
+
+    <div class="price">
+      {{ p.price }} <span>$CA</span>
+    </div>
+
+    <button (click)="addToCart(p)">
+      Ajouter au Panier
+      <img src="/assets/cart.png" title="image"/>
+    </button>
+
+  </div>
+</div>
+<!--
+<div class="video-panel">
+  <iframe
+    title="iframe"
+    name="iframe"
+    [src]="currentVideo | safeUrl"
+    allowfullscreen>
+  </iframe>
+</div>
+-->
