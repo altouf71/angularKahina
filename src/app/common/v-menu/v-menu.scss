@@ -1,0 +1,33 @@
+/* Vertical menu hover */
+.vertical-menu .nav-link {
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #5f6987;
+    /* default text color */
+    transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.vertical-menu .nav-link:hover {
+    background-color: rgba(255, 128, 0, 0.15);
+    color: #ff8000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Active route (Angular routerLinkActive) */
+.vertical-menu .nav-link.active {
+    background-color: rgba(255, 128, 0, 0.25);
+    color: #ff8000;
+    font-weight: 600;
+}
+
+/* Optional: icon color effect */
+.vertical-menu .nav-link img {
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.vertical-menu .nav-link:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}

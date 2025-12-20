@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-delices',
@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './delices.scss',
 })
 export class Delices {
+  showMenu = false;
+  showCart = false;
+  showLogin = false;
+
+  @ViewChild('sCart') sCart!: ElementRef<HTMLDivElement>;
+
   socials = [
     {
       name: 'Instagram',
@@ -21,46 +27,55 @@ export class Delices {
     },
   ];
 
-  heroBoxes = [
-    {
-      ref: 'boite-doree',
-      name: '10 PCS DELICES',
-      price: 40,
-      image: '/assets/produits/pages/delices/boite_doree.png',
-      description: 'Un met typiquement Algérien...',
-      showInfo: false,
-    },
-    {
-      ref: 'boite-rouge',
-      name: '5 PCS DELICES',
-      price: 21,
-      image: '/assets/produits/pages/delices/boite_rouge.png',
-      description: 'Un met typiquement Algérien...',
-      showInfo: false,
-    },
-  ];
+  showInfo = false;
 
-  products = [
-    {
-      ref: 'dziriattes',
-      name: 'DZIRIATTES',
-      price: 4,
-      image: './assets/produits/produits-local/delices/dziriattes.png',
-      video: 'https://www.youtube.com/embed/O1rs0NkW85U',
-    },
-    {
-      ref: 'makrout',
-      name: 'MAKROUT AUX AMANDES',
-      price: 4,
-      image: '/assets/produits/produits-local/delices/makroute.png',
-      video: 'https://www.youtube.com/embed/R0LuKMtg6mg',
-    },
-  ];
+  boiteDorer = {
+    ref: 'boite-dorer',
+    name: '10 PCS DELICES',
+    price: 40,
+    image: 'https://kahina.ca/produits/pages/delices/boite_dorer.png',
+    description: `
+      Un met typiquement Algérien fait à base de semoule,
+      nourri de matière grasse végétale, fourré d’un mélange
+      amande, sucre et fleur d’oranger, frit puis plongé
+      dans un sirop. Bonne dégustation.
+    `,
+  };
 
-  currentVideo = this.products[0].video;
+  boiteRouge = {
+    ref: 'boite-rouge',
+    name: '5 PCS DELICES',
+    price: 21,
+    image: 'https://kahina.ca/produits/pages/delices/boite_rouge.png',
+    description: `
+      Un met typiquement Algérien fait à base de semoule,
+      nourri de matière grasse végétale, fourré d’un mélange
+      amande, sucre et fleur d’oranger, frit puis plongé
+      dans un sirop. Bonne dégustation.
+    `,
+    showInfo: false,
+  };
 
-  playVideo(url: string) {
-    this.currentVideo = url;
+  boiteMakrout = {
+    ref: 'boite-makrout',
+    name: '6 PCS MAKROUTES',
+    price: 18,
+    image: 'https://kahina.ca/images/delices.png',
+    description: `
+      Un met typiquement Algérien fait à base de semoule,
+      nourri de matière grasse végétale, fourré d’un mélange
+      amande, sucre et fleur d’oranger, frit puis plongé
+      dans un sirop. Bonne dégustation.
+    `,
+    showInfo: false,
+  };
+
+  ngAfterViewInit(): void {
+    //throw new Error('Method not implemented.');
+    console.log(this.sCart);
+    const width = this.sCart.nativeElement.offsetWidth;
+    console.log('Width of sCart:', width);
+    document.documentElement.style.setProperty('--s-cart-width', `${width}px`);
   }
 
   addToCart(product: any) {
