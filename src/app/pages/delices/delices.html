@@ -1,77 +1,157 @@
+<div class="container-fluid p-0 d-flex flex-column min-vh-100 position-relative">
+    <app-h-menu (cart)="showCart = !showCart; showMenu = false; showLogin = false"
+        (menu)="showMenu = !showMenu; showCart = false ; showLogin = false"
+        (profile)="showLogin = !showLogin; showCart = false; showMenu = false">
+    </app-h-menu>
 
-<div class="social-bar">
-  <span class="label">NOUS SUIVRE SUR :</span>
+    <!--<app-v-menu></app-v-menu>-->
+    @if (showMenu) {
+    <aside class="side-menu modal-backdrop" [animate.enter]="'slide-in-left'" [animate.leave]="'slide-out-left'">
+        <app-v-menu></app-v-menu>
+    </aside>
+    }
 
-  <a *ngFor="let s of socials"
-     [href]="s.url"
-     target="_blank"
-     class="social-link">
-    <img [src]="s.icon" [alt]="s.name" width="25" title="image"/>
-  </a>
-</div>
-<div class="hero-container">
+    @if (showCart) {
+    <aside class="shopping-cart modal-backdrop" [animate.enter]="'slide-in-right'" [animate.leave]="'slide-out-right'">
+        <div #sCart>
+            <app-s-cart></app-s-cart>
+        </div>
+    </aside>
+    }
 
-  <div class="hero-title">
-    <p class="title">LES DÉLICES DE KAHINA</p>
-    <p class="subtitle">DÉCOUVRIR NOS SUCRERIES</p>
-  </div>
-
-  <div class="hero-products">
-    <div *ngFor="let box of heroBoxes"
-         class="hero-box"
-         (mouseenter)="box.showInfo = true"
-         (mouseleave)="box.showInfo = false">
-
-      <img class="info-icon" src="/assets/icons/info.png" title="image"/>
-
-      <p class="info" *ngIf="box.showInfo">
-        {{ box.description }}
-      </p>
-
-      <img [src]="box.image" class="box-image" title="image"/>
-
-      <p class="box-title">{{ box.name }}</p>
-
-      <div class="price">
-        {{ box.price }} <span>$CA</span>
-      </div>
-
-      <button (click)="addToCart(box)">
-        Ajouter au Panier
-        <img src="/assets/images/shopping_cart_bleu.png" title="image"/>
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="products-grid">
-
-  <div *ngFor="let p of products" class="product-card">
-
-    <div class="video-thumb" (click)="playVideo(p.video)">
-      <img [src]="p.image" title="image"/>
+    @if (showLogin) {
+    <aside class="profil-login modal-backdrop" [animate.enter]="'slide-in-right'" [animate.leave]="'slide-out-right'">
+        <div #sCart>
+            <app-p-login></app-p-login>
+        </div>
+    </aside>
+    }
+    
+    <div class="social-bar ms-5 mt-3 mb-5 d-flex align-items-center gap-2">
+        <span class="label">NOUS SUIVRE SUR :</span>
+        <img src="assets/icons/instagram_logo_gray.png" alt="s.name" width="25" title="image" />
+        <img src="assets/icons/facebook_logo_gray.png" alt="s.name" width="25" title="image" />
+        <img src="assets/icons/tiktok_logo_gray.png" alt="s.name" width="25" />
     </div>
 
-    <p class="name">{{ p.name }}</p>
+    <div class="delices-header">
+        <p class="title">
+            LES DÉLICES DE KAHINA
+        </p>
 
+        <p class="subtitle">
+            DÉCOUVRIR NOS SUCRERIES
+        </p>
+    </div>
+
+    <div class="col-12">
+        <div class="boite-dorer" (mouseenter)="showInfo = true" (mouseleave)="showInfo = false">
+
+        <div class="content">
+
+            <!-- Product image -->
+            <img class="product-image" [src]="boiteDorer.image" alt="Boite dorée" />
+            
+            <!-- Info text -->
+            <p class="info-text" *ngIf="showInfo">
+                {{ boiteDorer.description }}
+            </p>
+            
+            <!-- Product name -->
+            <p class="product-name">
+                {{ boiteDorer.name }}
+            </p>
+            
+            <!-- Price -->
+            <div class="price">
+                <span>{{ boiteDorer.price }}</span>
+                <span>$CA</span>
+                </div>
+            <!-- Add to cart -->
+            <button class="button-delices" (click)="addToCart(boiteDorer)">
+                <!-- Info icon -->
+                <img class="info-icon" src="assets/icons/logo/logo_info.png" alt="info" />
+                <!-- Info text -->
+                Ajouter au Panier
+                <img class="cart-icon" src="assets/images/shopping_cart_bleu.png" alt="panier" />
+                </button>
+                </div>
+                </div>
+            <div class="boite-rouge" (mouseenter)="boiteRouge.showInfo = true" (mouseleave)="boiteRouge.showInfo = false">
+                <!-- Info icon -->
+                <img class="info-icon" src="assets/icons/logo_info.png" alt="info" />
+            
+                <!-- Info text -->
+                <p class="info-text" *ngIf="boiteRouge.showInfo">
+                    {{ boiteRouge.description }}
+                </p>
+                <div class="content">
+                    <!-- Product image -->
+                    <img class="product-image" [src]="boiteRouge.image" alt="Boite rouge" />
+                    <!-- Product name -->
+                    <p class="product-name">
+                        {{ boiteRouge.name }}
+                    </p>
+                    <!-- Price -->
+                    <div class="price">
+                        <span>{{ boiteRouge.price }}</span>
+                        <span>$CA</span>
+            </div>
+
+            <!-- Add to cart -->
+            <button class="button-delices" (click)="addToCart(boiteRouge)">
+                <!-- Info icon -->
+                <img class="info-icon" src="assets/icons/logo/logo_info.png" alt="info" />
+                <!-- Info text -->
+                Ajouter au Panier
+                <img class="cart-icon" src="assets/images/shopping_cart_bleu.png" alt="panier" />
+            </button>
+            </div>
+            </div>
+            <div class="boite-makrout" (mouseenter)="boiteMakrout.showInfo = true" (mouseleave)="boiteMakrout.showInfo = false">
+
+    <!-- Info icon -->
+    <img class="info-icon" src="assets/icons/logo_info.png" alt="info" />
+    <!-- Info text -->
+    <p class="info-text" *ngIf="boiteMakrout.showInfo">
+        {{ boiteMakrout.description }}
+    </p>
+    <div class="content">
+
+        <!-- Product image -->
+        <img class="product-image" [src]="boiteMakrout.image" alt="Makrout" />
+
+    <!-- Product name -->
+    <p class="product-name">
+        {{ boiteMakrout.name }}
+    </p>
+
+    <!-- Price -->
     <div class="price">
-      {{ p.price }} <span>$CA</span>
+    <span>{{ boiteMakrout.price }}</span>
+    <span>$CA</span>
     </div>
 
-    <button (click)="addToCart(p)">
-      Ajouter au Panier
-      <img src="/assets/cart.png" title="image"/>
+    <!-- Add to cart -->
+    <button class="button-delices" (click)="addToCart(boiteMakrout)">
+        <!-- Info icon -->
+        <img class="info-icon" src="assets/icons/logo/logo_info.png" alt="info" />
+        <!-- Info text -->
+        Ajouter au Panier
+        <img class="cart-icon" src="assets/images/shopping_cart_bleu.png" alt="panier" />
     </button>
 
   </div>
 </div>
-<!--
-<div class="video-panel">
-  <iframe
-    title="iframe"
-    name="iframe"
-    [src]="currentVideo | safeUrl"
-    allowfullscreen>
-  </iframe>
+
 </div>
--->
+</div>
+<div class="col-12 p-0 mt-10">
+    <app-delices-produits></app-delices-produits>
+</div>
+
+<div class="col-12 p-0 mt-10">
+    <app-gallery></app-gallery>
+    <app-footer></app-footer>
+</div>
+

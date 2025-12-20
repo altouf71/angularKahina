@@ -1,43 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+<nav class="nav-item navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
   <div class="container-fluid">
-    <!--Brand-->
-    <!--<a class="navbar-brand fw-bold" routerLink="/">My Angular App</a>-->
-    <!--Mobile Toggle Button-->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <button class="btn btn-light btn-sm" aria-label="Menu" (click)=" openMenu()">
+    <div class="d-flex align-items-center gap-5">
+    
+      <button class="btn btn-light btn-lg" aria-label="Menu" (click)=" openMenu()">
         <i class="bi bi-list"></i>
     </button>
+
     <button class="btn btn-light btn-sm" aria-label="Home" (click)=" goToHome()">
-      <span>Home</span>
+      <img src="assets/logo/logo_8.png" width="100" alt="Artisanat Logo" />
     </button>
+    </div>
 
     <!--Menu-->
     <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="d-flex ms-auto me-3 justify-content-center align-items-right">
-            <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-light" (click)="openCart()">
-              <!--<i class="fa-solid fa-gauge me-1"></i>-->
-              <!--<i class="bi bi-basket"></i>-->
-              <!--<i class="bi bi-basket-fill"></i>-->
-                <!--<i class="bi bi-cart"></i>-->
-                <!--<i class="bi bi-cart-fill"></i>-->
-                <!--<i class="fa-solid fa-basket-shopping"></i>-->
+        <div class="d-flex ms-auto gap-5 me-3 justify-content-center align-items-right">
+          <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-light btn-lg"
+            (click)="openCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <!--<i class="fa-solid fa-shopping-bag"></i>-->
                 </button>
-                <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-light" (click)="openHeart()">
+                <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-light btn-lg"
+                  (click)="openHeart()">
                   <i class="bi bi-heart"></i>
                 </button>
-                <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-light"
+                <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-light btn-lg"
                   (click)="openProfile()">
                   <i class="fa-solid fa-user"></i>
                 </button>

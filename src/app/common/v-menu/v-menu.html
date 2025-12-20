@@ -1,28 +1,55 @@
-<div class="col-12 col-md-4 col-lg-3">
+<!--
+<div class="col-12 col-md-5 col-lg-4 position-absolute start-0 top-10 model-backdrop">
     <nav class="navbar navbar-light bg-white border-bottom shadow-sm min-vh-100
             d-flex flex-column align-items-start">
-        <!--
-        <div class="container-fluid">
-         
-            <button
-                class="btn btn-light btn-sm"
-                type="button"
-                aria-label="Menu"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    -->
-        <ul class="navbar-nav ms-4 mt-3 w-100">
-        <li>    
-            <a class="nav-link" routerLink="/delices" routerLinkActive="active">Delices</a>
+        <ul class="navbar-nav ms-4 mt-3 w-100 vertical-menu">
+            <li class="nav-item mb-1">
+                <a class="nav-link d-flex align-items-center gap-3" routerLink="/delices" routerLinkActive="active">
+                    <img src="assets/images/delices.png" alt="Delices" width="40" />
+                    <span>Delices Traditionnel</span>
+                    -->
+                    <div class="col-12 col-md-4 col-lg-3 position-absolute start-0 top-10 model-backdrop">
+
+<nav class="navbar navbar-light bg-white border-bottom shadow-sm min-vh-100
+              position-relative d-flex flex-column align-items-start p-0">
+
+    <ul class="navbar-nav w-100 vertical-menu px-3 mt-3">
+        <li class="nav-item mb-1">
+            <a class="nav-link d-flex align-items-center gap-3" routerLink="/delices" routerLinkActive="active">
+                <img src="assets/images/delices.png" width="40" title="delices" />
+                <span>Delices Traditionnel</span>
+            </a>
         </li>
-        <li>    
-            <a class="nav-link" routerLink="/tenues" routerLinkActive="active">Tenues</a> 
+        <li class="nav-item mb-1">
+            <a class="nav-link d-flex align-items-center gap-3" routerLink="/tenues" routerLinkActive="active">
+                <img src="assets/images/tenues.png" alt="Tenues" width="40" />
+                <span>Tenues Traditionnel</span>
+            </a>
         </li>
-        <li>
-            <a class="nav-link" routerLink="/bijoux" routerLinkActive="active">Bijoux</a>
+        <li class="nav-item mb-1">
+            <a class="nav-link d-flex align-items-center gap-3" routerLink="/bijoux" routerLinkActive="active">
+                <img src="assets/images/jewelry.png" alt="Bijoux" width="40" />
+                <span>Bijoux Faite Mains</span>
+            </a>
         </li>
+        <li class="nav-item mb-1">
+            <a class="nav-link d-flex align-items-center gap-3" routerLink="/pottery" routerLinkActive="active">
+                <img src="assets/images/pottery.png" alt="Pottery" width="40" />
+                <span>Potterie Traditionnel</span>
+            </a>
+        </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link d-flex align-items-center gap-3" routerLink="/tapis" routerLinkActive="active">
+                    <img src="assets/images/tapis.png" alt="Tapis" width="40" />
+                    <span>Tapis Traditionnel</span>
+                </a>
+            </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link d-flex align-items-center gap-3" routerLink="/mode" routerLinkActive="active">
+                    <img src="assets/images/mode.png" alt="Mode" width="40" />
+                    <span>Tenues Casual</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

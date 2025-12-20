@@ -1,0 +1,229 @@
+.boite-dorer {
+    display: inline-block;
+    float: left;
+    margin-left: 10%;
+    width: 20%;
+    background-color: rgba(255, 128, 0, 0.3);
+    border-radius: 5px;
+    box-shadow: 0 6px 20px rgba(255, 128, 0, 0.2),
+        0 6px 8px rgba(255, 128, 0, 0.19);
+    cursor: pointer;
+}
+
+.content {
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-name {
+    font-family: Harmattan;
+    font-size: 20px;
+    color: red;
+}
+
+.price {
+    font-family: Harmattan;
+    font-size: 25px;
+    color: red;
+    margin-top: 10px;
+}
+
+.button-delices {
+    width: 90%;
+    height: 40px;
+    background-color: lightblue;
+    border: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.info-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.info-text {
+    background-color: rgba(211, 211, 211, 0.8);
+    border-radius: 5px;
+    font-family: Harmattan;
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.boite-rouge {
+    display: inline-block;
+    float: left;
+    margin-left: 10%;
+    width: 20%;
+    background-color: rgba(255, 128, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 128, 0, 0.2),
+        0 6px 8px rgba(255, 128, 0, 0.19);
+    cursor: pointer;
+    position: relative;
+}
+
+.info-icon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.info-text {
+    position: absolute;
+    left: -10%;
+    bottom: -25%;
+    width: 120%;
+    font-family: Harmattan;
+    font-size: 16px;
+    background-color: rgba(211, 211, 211, 0.8);
+    color: gray;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.content {
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-name {
+    font-family: Harmattan;
+    font-size: 20px;
+    color: red;
+}
+
+.price {
+    font-family: Harmattan;
+    font-size: 25px;
+    color: red;
+    margin-top: 10px;
+}
+
+.button-delices {
+    width: 90%;
+    height: 40px;
+    background-color: lightblue;
+    border: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+
+.boite-makrout {
+    display: inline-block;
+    float: left;
+    margin-left: 10%;
+    width: 20%;
+    background-color: rgba(255, 128, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 128, 0, 0.2),
+        0 6px 8px rgba(255, 128, 0, 0.19);
+    cursor: pointer;
+    position: relative;
+}
+
+.info-icon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.info-text {
+    position: absolute;
+    left: -10%;
+    bottom: -25%;
+    width: 120%;
+    font-family: Harmattan;
+    font-size: 16px;
+    background-color: rgba(211, 211, 211, 0.8);
+    color: gray;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.content {
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-name {
+    font-family: Harmattan;
+    font-size: 20px;
+    color: red;
+}
+
+.price {
+    font-family: Harmattan;
+    font-size: 25px;
+    color: red;
+    margin-top: 10px;
+}
+
+.button-delices {
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    background-color: lightblue;
+    border: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.delices-header {
+    display: block;
+    width: 30%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.title {
+    width: 100%;
+    font-family: Cinzel;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(95, 105, 135);
+}
+
+.subtitle {
+    width: 100%;
+    font-family: Harmattan;
+    font-size: 22px;
+    text-align: center;
+    color: orange;
+}

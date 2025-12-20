@@ -1,0 +1,55 @@
+<div id="contenu_des_produits" class="contenu">
+
+  <div class="main-layout">
+
+    <!-- PRODUCTS LIST -->
+    <div class="products">
+      <div class="product-card"
+        *ngFor="let p of products">
+        
+        <!-- CLICKABLE IMAGE (LOAD VIDEO) -->
+        <div class="video-load" (click)="selectVideo(p.videoUrl)">
+          <img [src]="p.image" [alt]="p.name" title="image"/>
+        </div>
+
+        <!-- NAME -->
+        <div class="product-name">
+          <p>{{ p.name }}</p>
+        </div>
+
+        <!-- PRICE -->
+        <div class="product-price">
+          <span>{{ p.price }}</span>
+          <span>$CA</span>
+        </div>
+
+        <!-- ADD TO CART -->
+        <div class="product-action">
+          <button class="button-delices" (click)="addToCart(p)">
+            Ajouter au Panier
+            <img
+              src="https://kahina.ca/images/shopping_cart_bleu.png"
+              alt="panier"
+            />
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VIDEO PANEL -->
+    <div class="video-panel">
+
+      <div class="video-container">
+        <iframe
+          *ngIf="selectedVideo"
+          [src]="selectedVideo | safeUrl"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+

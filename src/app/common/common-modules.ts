@@ -7,10 +7,12 @@ import { PLogin } from './p-login/p-login';
 import { Footer } from './footer/footer';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Gallery } from './gallery/gallery';
+import { DelicesProduits, SafeUrlPipe } from '../pages/delices/delices-produits';
 
 @NgModule({
-  declarations: [HMenu, VMenu, SCart, PLogin, Footer],
-  imports: [CommonModule, RouterModule, FormsModule],
-  exports: [PLogin, Footer, HMenu, VMenu, SCart],
+  declarations: [HMenu, VMenu, SCart, PLogin, Footer, Gallery, DelicesProduits],
+  imports: [CommonModule, RouterModule, FormsModule, SafeUrlPipe],
+  exports: [PLogin, Footer, HMenu, VMenu, SCart, Gallery, DelicesProduits],
 })
 export class CommonModules {}
